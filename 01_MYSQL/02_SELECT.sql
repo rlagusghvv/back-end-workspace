@@ -377,13 +377,15 @@ LIMIT 10 OFFSET 0;
 SELECT *
 FROM employee
 WHERE job_code in ("J7", "J2") AND salary >= 2000000;
+-- WHERE (job_code = "J7" OR job_code = "J2") AND salary >= 2000000;
+-- ()로 우선순위 높여주기!
 
 -- 2. 사수가 없고 부서배치도 받지 않은 사원들의 사원명(emp_name), 사수사번(manager_id), 부서코드(dept_code) 조회
 SELECT emp_name, manager_id, dept_code
 FROM employee
 WHERE manager_id IS NULL AND dept_code IS NULL;
 
--- 3. 연봉(보너스포함X)이 300만원 이상이고 보너스를 받지 않은 사원들의 사번(emp_id), 사원명, 급여, 보너스(bonus) 조회
+-- 3. 연봉(보너스포함X)이 4천만원 이상이고 보너스를 받지 않은 사원들의 사번(emp_id), 사원명, 급여, 보너스(bonus) 조회
 SELECT emp_id, emp_name, salary, bonus
 FROM employee
 WHERE salary * 12 >= 40000000 AND bonus IS NULL;
@@ -397,11 +399,17 @@ ORDER BY 3;
 SELECT emp_id, emp_name, salary, hire_date, bonus
 FROM employee
 WHERE salary BETWEEN 2000000 AND 5000000 AND hire_date >= "2001-01-01" AND bonus IS NULL;
+-- WHERE salary >= 2000000 AND salary <= 5000000 AND hire_date >= "2001-01-01" AND bonus Is NULL;
+-- sql에서는 범위를 컬럼값 BETWEEN 조건 1 AND 조건 2로 표현할 수 있음!
 
--- 6. 보너스 포함 연봉이 NULL이 아니고 이름에 '하'가 포함되어 있는 사원들의 사번, 사원명, 급여, 보너스 포함 연봉(별칭부여) 조회
+-- 6. 보너스 포함 연봉이 NULL이 아니고 이름에 '하'가 포함되어 있는 사원들의 사번, 사원명, 급여, 보너스 포함 연봉(별칭부여) 조회 (연봉이 높은 순으로 정렬!)
 -- 보너스 포함 연봉 : (salary + salary * bonus) * 12
-SELECT emp_id, emp_name, salary, (salary + salary * bonus) * 12 "보너스 포함 연봉"
+SELECT emp_id, emp_name, salary, (salary + salary * bonus) * 12 연봉
 FROM employee
-WHERE (salary + salary * bonus) * 12 IS NOT NULL AND emp_name LIKE "%하%";
+WHERE (salary + salary * bonus) * 12 IS NOT NULL AND emp_name LIKE "%하%"
+ORDER BY 연봉 DESC;
+-- 별칭을 사용해 SORT하고 싶다면 한 단어로 별칭을 생성했을 경우만 가능!
+
+
 
 
