@@ -91,7 +91,7 @@ FROM employee
 JOIN department ON (ifNULL(dept_id,0) = IFNULL(dept_code,0))
 JOIN job USING (job_code)
 JOIN location ON (IFNULL(location_id,0)=IFNULL(local_code,0))
-JOIN national USING(IFNULL(national_code,0))
+JOIN national USING(national_code)
 JOIN sal_grade ON (min_sal <= salary AND salary <= max_sal);
 
 

@@ -153,7 +153,7 @@ JOIN department on (dept_id = dept_code);
 -- 2) RIGHT JOIN : 두 테이블 중 오른쪽 기술된 테이블을 기준으로 JOIN
 SELECT emp_name, dept_title, salary, salary*12 연봉
 FROM employee
-RIGHT JOIN department on (dept_id = dept_code);
+LEFT JOIN department on (dept_id = dept_code);
 
 -- 3) FULL JOIN : 두 테이블이 가진 모든 행을 조회할 수 있음 - MYSQL
 
