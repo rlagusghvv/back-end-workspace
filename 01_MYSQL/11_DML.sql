@@ -115,6 +115,7 @@ SELECT * FROM emp_manager;
   
 */
 
+DESC dept_copy;
 SELECT * FROM dept_copy;
 SELECT * FROM emp_salary;
 
@@ -130,3 +131,73 @@ commit;
 -- 모든 사원의 급여를 기존 급여에서 10프로 인상한 금액 (기존 급여 * 1.1)으로 변경
 UPDATE emp_salary
 SET salary = salary * 1.1;
+
+-- 사번이 201인 사원의 사원번호를 NULL로 변경
+DESC emp_salary;
+ALTER TABLE emp_salary DROP PRIMARY KEY;
+SELECT TABLE_SCHEMA, TABLE_NAME, CONSTRAINT_NAME, CONSTRAINT_TYPE
+FROM information_schema.TABLE_CONSTRAINTS
+WHERE TABLE_SCHEMA = 'sample' AND TABLE_NAME = 'emp_salary';
+UPDATE emp_salary
+SET emp_id = NULL
+WHERE emp_id = 201;
+-- >> emp_id 주요키(primary key) 제약조건 위배 (NOT NULL 위배!)
+
+-- 아시아 지역에 근무하는 직원들의 보너스를 0.3으로 변경
+UPDATE emp_salary
+SET bonus = 0.3
+WHERE emp_id IN (SELECT emp_id
+FROM kh.location 
+JOIN kh.department ON (local_code = location_id) 
+JOIN kh.employee ON (dept_code = dept_id) 
+WHERE local_name LIKE "%ASIA%");
+
+SELECT * FROM emp_salary
+left JOIN kh.department ON (dept_code = dept_id)
+left JOIN kh.location ON (local_code = location_id);
+
+
+/*
+
+  DELETE
+  - 테이블에 기록된 데이터를 삭제하는 구문
+  DELETE FROM 테이블명
+  WHERE 조건식;
+  
+  - WHERE 절을 제시하지 않으면 전체 행이 삭제된다!
+
+*/
+
+-- emp_salary에서 dept_code가 D5인 직원들을 삭제
+DELETE FROM emp_salary
+WHERE dept_code = 'D5';
+
+SELECT * FROM emp_salary;
+
+/*
+  TRUNCATE
+  - 테이블 전체 행을 삭제할 때 사용하는 구문
+  - DELETE 보다 수행 속도가 빠르다는 장점!
+  - 별도의 조건 제시 불가! ROLLBACK이 불가!
+  
+  TRUNCATE TABLE 테이블명;
+  
+*/
+
+START transaction;
+
+DELETE FROM emp_salary;
+DELETE FROM dept_copy;
+
+SELECT * FROM emp_salary;
+SELECT * FROM dept_copy;
+
+ROLLBACK; -- DELETE는 ROLLBACK 가능!
+
+TRUNCATE TABLE emp_salary;
+TRUNCATE TABLE dept_copy;
+
+ROLLBACK;
+
+SELECT * FROM emp_salary;
+SELECT * FROM dept_copy;
