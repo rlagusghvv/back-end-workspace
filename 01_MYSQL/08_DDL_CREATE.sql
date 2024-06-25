@@ -1,4 +1,4 @@
-/*
+ /*
 
   DDL(Data Definition Language) : 데이터 정의어
   - 객체(Object)/스키마(Schema)를 만들고(CREATE), 변경하고(ALTER), 삭제(DROP)하는 언어

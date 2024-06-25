@@ -43,7 +43,8 @@ INSERT INTO book(bk_title, bk_author, bk_price, bk_pub_no) VALUE('피플웨어',
 INSERT INTO book(bk_title, bk_author, bk_price, bk_pub_no) VALUE('그로스 해킹', '라이언 홀리데이', 13800, 3);
 SELECT bk_no, bk_title, bk_author, bk_price, pub_no
  FROM book
- JOIN publisher ON (bk_pub_no = pub_no);
+ JOIN publisher ON (bk_pub_no = pub_no)
+ ORDER BY bk_no;
 
 -- 3. 회원에 대한 데이터를 담기 위한 회원 테이블 (member)
 --    컬럼 : member_no(회원번호) -- 기본 키
