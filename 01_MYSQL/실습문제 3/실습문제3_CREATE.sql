@@ -20,6 +20,7 @@ INSERT INTO publisher(pub_name, phone) VALUE('프리렉', '032-326-7282');
 INSERT INTO publisher(pub_name, phone) VALUE('인사이트', '02-332-5143');
 INSERT INTO publisher(pub_name, phone) VALUE('길벗', '02-332-0931');
 SELECT * FROM publisher;
+
 -- 2. 도서들에 대한 데이터를 담기 위한 도서 테이블 (book)
 --    컬럼 : bk_no (도서번호) -- 기본 키
 --           bk_title (도서명) -- NOT NULL
@@ -41,7 +42,7 @@ INSERT INTO book(bk_title, bk_author, bk_price, bk_pub_no) VALUE('1일 1로그 1
 INSERT INTO book(bk_title, bk_author, bk_price, bk_pub_no) VALUE('개발자가 영어도 잘해야 하나요?', '최희철', 27000, 3);
 INSERT INTO book(bk_title, bk_author, bk_price, bk_pub_no) VALUE('피플웨어', '톰 드마르코', 16800, 2);
 INSERT INTO book(bk_title, bk_author, bk_price, bk_pub_no) VALUE('그로스 해킹', '라이언 홀리데이', 13800, 3);
-SELECT bk_no, bk_title, bk_author, bk_price, pub_no
+SELECT bk_no, bk_title, bk_author, FORMAT(bk_price,0) 가격, pub_no
  FROM book
  JOIN publisher ON (bk_pub_no = pub_no)
  ORDER BY bk_no;
