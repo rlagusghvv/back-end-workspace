@@ -1,4 +1,5 @@
 /*
+ /*
  * * 자바의 특징
  *   - 객체지향 프로그래밍(Object-Oriented Programming, OOP)언어다.
  *   - 자동으로 메모리를 관리한다. (Garbage Collection)
