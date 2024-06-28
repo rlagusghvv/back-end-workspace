@@ -4,6 +4,13 @@ import java.util.Scanner;
 
 public class VariablePractice {
 	
+	Scanner sc = new Scanner(System.in); // 공용 변수(전역 변수)의 경우 class 내부에 있으면 내부의 메서드에서도 사용 가능!
+	/*
+	 * 메서드 내에 있는 변수는 메서드 내부에서만 통용됨! - 지역 변수
+	 * - 지역 변수는 메서드 내부에서만 영향이 있기에, 다른 메서드에서 동일한 변수명의 사용이 가능!
+	 * - 동일한 변수명의 지역 변수, 전역 변수가 있는 경우 우선순위는 1.지역 변수 - 2.전역 변수임!
+	 * 
+	 */
 	public static void main(String[] args) {
     VariablePractice variable = new VariablePractice();
     variable.method1();
@@ -63,9 +70,10 @@ public class VariablePractice {
 	 * 나누기 몫 : 3
 	 * */
 	public void method3() {
-    int int1 = 23;
-    int int2 = 7;
-    
+    System.out.print("첫번째 정수 : ");
+    int int1 = sc.nextInt();
+    System.out.print("두번째 정수 : ");
+    int int2 = sc.nextInt();
     System.out.println("더하기 : " + (int1+int2) + "\n빼기 : " + (int1-int2) + "\n곱하기 : "
     		+ (int1*int2) + "\n나누기 몫 : " + (int1/int2));
     System.out.println("------------------------------------------");
@@ -82,7 +90,6 @@ public class VariablePractice {
 	 * 둘레 : 110.4
 	 * */
 	public void method4() {
-		Scanner sc = new Scanner(System.in);
 		System.out.print("가로 :");
 	  double g = sc.nextDouble();
 	  System.out.print("세로 :");
@@ -102,7 +109,6 @@ public class VariablePractice {
 	 * 마지막 문자 : e
 	 * */
 	public void method5() {
-		Scanner sc = new Scanner(System.in);
 		System.out.print("문자열을 입력하세요 : ");
 		String str = sc.nextLine();
 		System.out.println("첫번째 문자 : " + str.charAt(0) + "\n두번째 문자 : " + str.charAt(1) + "\n마지막 문자 : " + str.charAt(str.length()-1)  );
@@ -119,7 +125,6 @@ public class VariablePractice {
 	 * B unicode : 66
 	 * */
 	public void method6() {
-		Scanner sc = new Scanner(System.in);
 		System.out.print("문자를 입력하세요 : ");
 	    char char1 = sc.next().charAt(0);
 	    char char2 = (char)(char1 + 1);
@@ -138,7 +143,6 @@ public class VariablePractice {
 	 * 평균 : 72.67
 	 * */
 	public void method7() {
-		Scanner sc = new Scanner(System.in);
 		System.out.print("국어 성적을 입력하세요 : ");
 		int kor = sc.nextInt();
 		System.out.print("영어 성적을 입력하세요 : ");
