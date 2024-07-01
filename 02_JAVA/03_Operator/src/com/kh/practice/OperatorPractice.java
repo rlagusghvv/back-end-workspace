@@ -6,12 +6,12 @@ public class OperatorPractice {
     Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		OperatorPractice b = new OperatorPractice();
-		b.method1();
-		b.method2();
-		b.method3();
-		b.method4();
-		b.method5();
-		b.method6();
+//		b.method1();
+//		b.method2();
+//		b.method3();
+//		b.method4();
+//		b.method5();
+//		b.method6();
 		b.method7();
 	}
 
@@ -32,6 +32,7 @@ public class OperatorPractice {
 		System.out.print("무작위 숫자를 입력하시오");
 		int num = sc.nextInt();
 		int result = num >= 100 ? num - (num%100) : num;
+		// double result = num / 100 * 100
 		System.out.println(result);
 
 	}
@@ -44,6 +45,7 @@ public class OperatorPractice {
 		int num3 = sc.nextInt();
 		
 	    String result = num1 == num2 && num2 == num3 ? "true" : "false";
+	    // boolean result = num1 == num2 && num2 == num3
 	    System.out.println(result);
 	}
 
@@ -85,7 +87,8 @@ public class OperatorPractice {
 		int apple = sc.nextInt();
 		int basket = sc.nextInt();
 		
-		System.out.println(apple/basket +1 + "개면 사과를 전부 담을 수 있어요");
+		System.out.println((apple % basket == 0 ? apple/basket : apple / basket + 1 ) + "개면 사과를 전부 담을 수 있어요");
+		// apple / basket + (apple % basket == 0 ? 0 : 1);
 	}
 	
 }
