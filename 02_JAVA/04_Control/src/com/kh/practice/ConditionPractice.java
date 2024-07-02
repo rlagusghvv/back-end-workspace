@@ -1,21 +1,22 @@
 package com.kh.practice;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class ConditionPractice {
 Scanner sc = new Scanner(System.in);
 	public static void main(String[] args) {
 		ConditionPractice c = new ConditionPractice();
-		c.method1();
-		c.method2();
-		c.method3();
-		c.method4();
-		c.method5();
-		c.method6();
-		c.method7();
-		c.method8();
-		c.method9();
-		c.method10();
+//		c.method1();
+//		c.method2();
+//		c.method3();
+//		c.method4();
+//		c.method5();
+//		c.method6();
+//		c.method7();
+//		c.method8();
+//		c.method9();
+//		c.method10();
 		c.method11();
 		
 		
@@ -39,6 +40,16 @@ Scanner sc = new Scanner(System.in);
     	} else {
     		System.out.println("양수만 입력해주세요.");
     	}
+    	/* 
+    	 * 미리 양수가 아닌 수를 걸러내는 방법
+    	 * if (num <= 0){
+    	 * System.out.println("양수만 입력해주세요.");}
+    	 * else if (num % 2 == 0) {
+    	 * System.out.println("짝수다");}
+    	 * else {
+    	 * System.out.println("홀수다");
+    	 * }
+    	 */
     }
 
     /*
@@ -76,11 +87,11 @@ Scanner sc = new Scanner(System.in);
     	System.out.println("피자 조각 수와 피자를 먹는 사람 수를 입력해주세요.");
     	int slice = sc.nextInt();
     	int man = sc.nextInt();
-    	
-    	if (slice/man < 1) {
-    		System.out.println(2);
+    	int result = man/slice;
+    	if (man%slice != 0) {
+    		System.out.println(result + 1);
     	} else {
-    		System.out.println(1);
+    		System.out.println(result);
     	}
     }
 
@@ -115,7 +126,8 @@ Scanner sc = new Scanner(System.in);
        		System.out.println("수학 점수 : " + math);
        		System.out.println("영어 점수 :  " + eng);
        		System.out.println("합계 : " + (kor + math + eng));
-       		System.out.printf("평균 : %.2f\n" , avg);
+//       		System.out.printf("평균 : %.2f\n" , avg);
+       		System.out.println("평균 : " + String.format("%.1f", avg)); // 프린트 f 사용하지 않고 포맷 사용하는 방법!
        		System.out.println("축하합니다, 합격입니다!");
        	} else {
        		System.out.println("불합격입니다 ㅠㅠ");
@@ -132,9 +144,9 @@ Scanner sc = new Scanner(System.in);
     public void method5() {
     	System.out.println("옷 가격을 입력해주세요.");
     	int price = sc.nextInt();
-    	
+    	DecimalFormat df = new DecimalFormat("###,###"); // 자바에서 제공하는 단위 표시하는 클래스 
     	if (price < 100000) {
-    		System.out.println(price);
+    		System.out.println(df.format(price));
     	}
     	else if (price < 300000) {
     		System.out.println((int)(price * 0.95));
@@ -143,6 +155,8 @@ Scanner sc = new Scanner(System.in);
     	}else {
     		System.out.println((int)(price * 0.8));
     	}
+        
+    	
 
     }
 
@@ -267,6 +281,10 @@ Scanner sc = new Scanner(System.in);
     	System.out.println("연산 기호를 입력해주세요.(+,-,*,/,%) 중");
         char cal = sc.next().charAt(0);
         
+        if (num1 <= 0 || num2 <= 0) {
+        	System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+        }
+        else {
         switch (cal) {
         case '+':
         	System.out.println(num1 + num2);
@@ -285,6 +303,8 @@ Scanner sc = new Scanner(System.in);
         	break;
         	default:
         		System.out.println("잘못 입력하셨습니다. 프로그램을 종료합니다.");
+        		return;  // return : 해당 조건이 실행되면, 아래 쪽의 다른 코드를 실행하지 않고, 종료!
+        }
         }
     }
 
