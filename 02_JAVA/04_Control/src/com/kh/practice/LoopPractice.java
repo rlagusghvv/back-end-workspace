@@ -1,5 +1,6 @@
 package com.kh.practice;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 class LoopPractice {
@@ -7,11 +8,11 @@ class LoopPractice {
 
 	public static void main(String[] args) {
 		LoopPractice l = new LoopPractice();
-		l.method1();
-		l.method2();
-		l.method3();
-		l.method4();
-		l.method5();
+//		l.method1();
+//		l.method2();
+//		l.method3();
+//		l.method4();
+//		l.method5();
 		l.method6();
 
 	}
@@ -23,7 +24,7 @@ class LoopPractice {
 		System.out.print("숫자를 입력하세요 (1 ~ 100) : ");
 		int num = sc.nextInt();
 
-		for (int i = num; i >= 0; i--) {
+		for (int i = num; i >= 1; i--) {
 			System.out.println(i);
 		}
 
@@ -57,15 +58,24 @@ class LoopPractice {
 	 * 
 	 */
 	public void method3() {
+		
 		System.out.print("문자열을 입력하세요 : ");
 		String text = sc.next();
+		System.out.print("문자 입력하세요 : ");
+  	    char text1 = sc.next().charAt(0);
 		int a = 0;
+		
+		// 향상된 for문!
+//		for(char[] s : text.toCharArray()) {
+//			if(ch == s) count++
+//		}
+		
 		for (int i = 0; i < text.length(); i++) {
-			if (text.charAt(i) == 'a') {
+			if (text.charAt(i) == text1) {
 				a++;
 			}
 		}
-        System.out.println(text + "안에 포함된 a 개수는 : " + a);
+        System.out.println(text + "안에 포함된 " + text1 + "의 개수는 : " + a);
 	}
 
 	/*
@@ -88,6 +98,19 @@ class LoopPractice {
 	 * 
 	 */
 	public void method5() {
+		
+		
+		// 이거 복습해봐 배열쓰는법! 
+//		int [] dice = new int[6];
+//		for (int i = 0; i < 10; i++) {
+//			int random = (int) (Math.random()*6);
+//			dice[random]++;
+//		}
+//		
+//		for(int i = 0; i < dice.length; i++) {
+//			System.out.println((i+1) + " : " + dice[i]);
+//		}
+		
 		int num = 0;
 		int num1 = 0;
 		int num2 = 0;
@@ -138,7 +161,6 @@ class LoopPractice {
 	 String name = sc.next();
 	 int trans = 0;
 	 int same = 0;
-	 int win = 0;
 	 int lose = 0;
 	 
 	 while (true) {
@@ -171,7 +193,6 @@ class LoopPractice {
 			 System.out.println("비겼습니다.");
 			 same++;
 		 } else if((trans == 1 && num == 3) || (trans == 2 && num == 1) || (trans == 3 && num == 1)) {
-			 win++;
 			 break;
 		 } 
 		 else {
@@ -181,6 +202,41 @@ class LoopPractice {
 	 }
 	 System.out.println("이겼습니다! 비긴 횟수 : " + same + " 진 횟수 : " + lose);
     
-	}
+//	 System.out.println("당신의 이름을 입력해주세요 : ");
+//	 String name2 = sc.nextLine();
+//	 String[] rps = {"가위", "바위", "보"};
+//	 int win2 = 0;
+//	 int lose2 = 0;
+//	 int draw2 = 0;
+//	 
+//	 while(true) {
+//		 System.out.println("가위바위보 : ");
+//		 String input = sc.nextLine();
+//		 
+//		 // 0 - 가위, 1 - 바위, 2 - 보
+//		 int computer = (int) (Math.random() * 3);
+//		 System.out.println("컴퓨터 : " + rps[computer]);
+//		 
+//		 System.out.println(name + " : " + input);
+//		 
+//		 // 배열에서 인덱스 찾기 -> 사용자가 입력한 값을 숫자로!
+//	     int num10 = Arrays.asList(rps).indexOf(input);
+//		 
+//		 if (computer == num10) {
+//			 // 비겼을 경우
+//			 System.out.println("비겼습니다.");
+//			 draw2++;
+//		 } else if ((num10 == 0 && computer == 2) || (num10 == 1 && computer == 0) || (num10 == 2 && computer ==1) ) {
+//			 // 이겼을 경우
+//			 System.out.println("이겼습니다!");
+//			 win2++;
+//			 break;
+//		 } else {
+//			// 졌을 경우
+//			 lose2++;
+//			 System.out.println("졌습니다 ㅠㅠㅠㅠ");
+//		 }
+//	 } System.out.println("비긴 횟수 : " + draw2 + ", 진 횟수 : " + lose2 + ", 이긴 횟수 : " + win2);
+	} 
 
 }
