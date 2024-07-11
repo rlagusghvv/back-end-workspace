@@ -3,19 +3,20 @@ package com.kh.polymorphism.practice1;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import com.kh.polymorphism.practice1.model.Book;
-import com.kh.polymorphism.practice1.model.Member;
+import com.kh.polymorphism.practice1.model.Book2;
+
+import com.kh.polymorphism.practice1.model.Member2;
 
 
 public class Application2 {
 	
 		
 		Scanner sc = new Scanner(System.in);
-		Member member = new Member();
-		Book[] books = {new Book("밥을 지어요", true, 0), 
-					new Book("오늘은 아무래도 덮밥", false, 0), 
-					new Book("원피스 108", false, 15), 
-					new Book("귀멸의 칼날 23", false, 19)};
+		Member2 member = new Member2();
+		Book2[] books = {new Book2("밥을 지어요", true, 0), 
+					new Book2("오늘은 아무래도 덮밥", false, 0), 
+					new Book2("원피스 108", false, 15), 
+					new Book2("귀멸의 칼날 23", false, 19)};
 
 		public static void main(String[] args) {
 			Application2 app = new Application2();

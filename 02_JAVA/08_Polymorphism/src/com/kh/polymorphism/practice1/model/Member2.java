@@ -7,11 +7,11 @@ public class Member2 {
 	private String name;
 	private int age;
 	private int coupon;
-	private Book[] bookList = new Book[2];
+	private Book2[] bookList = new Book2[2];
 	
 	public Member2() {
 	}
-	public Member2(String name, int age, int coupon, Book[] bookList) {
+	public Member2(String name, int age, int coupon, Book2[] bookList) {
 		this.name = name;
 		this.age = age;
 		this.coupon = coupon;
@@ -35,10 +35,10 @@ public class Member2 {
 	public void setCoupon(int coupon) {
 		this.coupon = coupon;
 	}
-	public Book[] getBookList() {
+	public Book2[] getBookList() {
 		return bookList;
 	}
-	public void setBookList(Book[] bookList) {
+	public void setBookList(Book2[] bookList) {
 		this.bookList = bookList;
 	}
 	@Override
