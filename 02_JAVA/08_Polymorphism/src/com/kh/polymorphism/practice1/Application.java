@@ -4,13 +4,16 @@ import java.util.Scanner;
 
 import com.kh.polymorphism.practice1.controller.LibarayController;
 import com.kh.polymorphism.practice1.model.Book;
+import com.kh.polymorphism.practice1.model.Member;
 
 public class Application {
 	Scanner sc = new Scanner(System.in);
 	LibarayController lc = new LibarayController();
 	public static void main(String[] args) {
 		Application app = new Application();
-		
+		Scanner sc = new Scanner(System.in);
+		LibarayController lc = new LibarayController();
+		Member member = new Member();
 		// 책 정보 인서트
 		Book[] book = new Book[4];
 		book[0] = new Book("밥을 지어요", true, 0);
@@ -25,10 +28,14 @@ public class Application {
 			app.mypage();
 			break;
 		case 2:
+//			lc.showbook();
 			for(int i = 0; i < book.length; i++) {
 				System.out.println((i+1) + "번 도서 : " + book[i]);
 			}
-			System.out.println("대여할 도서 번호 선택 : ");
+			System.out.print("대여할 도서 번호 선택 : ");
+			int select = Integer.parseInt(sc.nextLine());
+			// select 번호에 따라서 해당 책이 Member - bookList에 추가
+		    member.getBookList()[0] = book[select-1];
 			
 			
 		}
@@ -44,6 +51,7 @@ public class Application {
 	}
 	
 	public int mainmenu() {
+		System.out.println("===== 메뉴 =====");
 		System.out.println("1. 마이페이지");
 		System.out.println("2. 도서 대여하기");
 		System.out.println("3. 프로그램 종료하기");

@@ -1,66 +1,41 @@
 package com.kh.polymorphism.practice1.model;
 
-import java.awt.print.Book;
-import java.util.Arrays;
-
 public class Member {
- 
-	private String name;
-	private int age;
-	private int coupon;
-	private Book[] bookList;
-	
-	public Member() {
-	}
+    private String name;
+    private int age;
+    private Book[] bookList;
 
-	public Member(String name, int age, int coupon, Book[] bookList) {
-		super();
-		this.name = name;
-		this.age = age;
-		this.coupon = coupon;
-		this.bookList = bookList;
-	}
+    public Member() {
+        this.bookList = new Book[5]; // 배열 크기를 필요한 만큼 설정
+    }
 
-	public String getName() {
-		return name;
-	}
+    public Member(String name, int age) {
+        this.name = name;
+        this.age = age;
+        this.bookList = new Book[5]; // 배열 크기를 필요한 만큼 설정
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public int getAge() {
-		return age;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	public int getCoupon() {
-		return coupon;
-	}
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-	public void setCoupon(int coupon) {
-		this.coupon = coupon;
-	}
+    public Book[] getBookList() {
+        return bookList;
+    }
 
-	public Book[] getBookList() {
-		return bookList;
-	}
-
-	public void setBookList(Book[] bookList) {
-		this.bookList = bookList;
-	}
-
-	@Override
-	public String toString() {
-		return "Member [name=" + name + ", age=" + age + ", coupon=" + coupon + ", bookList="
-				+ Arrays.toString(bookList) + "]";
-	}
-	
-	
-	
-	
-	
+    public void setBookList(Book[] bookList) {
+        this.bookList = bookList;
+    }
 }

@@ -35,4 +35,10 @@ public class LibarayController {
 
 	}
 	
+	public Book showbook() {
+
+		return book;
+
+	}
+	
 }
