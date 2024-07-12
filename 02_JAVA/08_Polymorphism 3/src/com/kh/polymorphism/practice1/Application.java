@@ -35,7 +35,7 @@ public class Application {
 			System.out.print("대여할 도서 번호 선택 : ");
 			int select = Integer.parseInt(sc.nextLine());
 			// select 번호에 따라서 해당 책이 Member - bookList에 추가
-		   
+		    member.getBookList()[0] = book[select-1];
 			
 			
 		}
