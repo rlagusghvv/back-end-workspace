@@ -9,7 +9,7 @@ import com.kh.controller.MemberController;
 public class Application {
 	
 	private Scanner sc = new Scanner(System.in);
-	private MemberController mc = new MemberController();
+	private MemberController mc = MemberController.getInstance();
 
 	public static void main(String[] args) {
 		Application app = new Application();
@@ -58,9 +58,9 @@ public class Application {
 		System.out.print("이름 : ");
 		String name = sc.nextLine();
 		
-		boolean check = mc.signUp(id, password, name);
 		
-		if (check)
+		
+		if (mc.signUp(id, password, name))
 		{
 		System.out.println("성공적으로 회원가입 완료했습니다.");
 		}

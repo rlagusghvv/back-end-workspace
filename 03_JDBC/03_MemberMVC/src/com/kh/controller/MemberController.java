@@ -1,16 +1,41 @@
 package com.kh.controller;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+import java.util.Properties;
 
 import config.ServerInfo;
 
 public class MemberController implements ServerInfo {
 
+	// 싱글톤 패턴(Singleton Pattern)
+	// - 디자인 패턴 중 하나로 클래스가 최대 한 번만 객체 생성되도록 하는 패턴
+	
+	Properties p = new Properties();
+	// 1. 생성자는 private
+    private MemberController () {
+    	try {
+			p.load(new FileInputStream("src/config/jdbc.properties"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+     	
+    // 2. 유일한 객체를 담을 static 변수
+    private static MemberController instance;
+    
+    // 3. 객체를 반환하는 static 메서드
+    public static MemberController getInstance() {
+    	if(instance == null) instance = new MemberController();
+    	return instance;
+    }
+	
 	private Connection conn;
 
 	public void dbc() {
@@ -40,18 +65,41 @@ public class MemberController implements ServerInfo {
 			e.printStackTrace();
 		}
 	}
+	
+	public boolean idCheck(String id) {
+		PreparedStatement ps;
+		try {
+			ps = conn.prepareStatement(p.getProperty("idCheck"));
+			ps.setString(1, id);
+			
+			ResultSet rs = ps.executeQuery();
+			String checkId = null;
+			if(rs.next()) {
+				checkId = rs.getString("id");
+			}
+		    closeAll(rs,ps, conn);
+		    
+		    if(checkId != null) return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 
 	public boolean signUp(String id, String password, String name) {
 		dbc();
 		try {
-			String query = "INSERT INTO member VALUES(?,?,?)";
-			PreparedStatement ps = conn.prepareStatement(query);
-			ps.setString(1, id);
-			ps.setString(2, password);
-			ps.setString(3, name);
-			ps.executeUpdate();
-			closeAll(ps, conn);
-			return true;
+			if(!idCheck(id)) {
+				String query = "INSERT INTO member VALUES(?,?,?)";
+				PreparedStatement ps = conn.prepareStatement(query);
+				ps.setString(1, id);
+				ps.setString(2, password);
+				ps.setString(3, name);
+				ps.executeUpdate();
+				closeAll(ps, conn);
+				return true;
+			}
+			return false;
 
 		} catch (SQLException e) {
 			return false;
@@ -66,7 +114,7 @@ public class MemberController implements ServerInfo {
 	public String login(String id, String password) {
 		dbc();
 		try {
-			PreparedStatement ps = conn.prepareStatement("SELECT name FROM member Where id = ? && password = ?");
+			PreparedStatement ps = conn.prepareStatement("SELECT name FROM member Where id = ? AND password = ?"); // &&도 가능!
 			ps.setString(1, id);
 			ps.setString(2, password);
 			ResultSet rs = ps.executeQuery();
@@ -113,7 +161,7 @@ public class MemberController implements ServerInfo {
 	public void changeName(String id, String newName) {
 		dbc();
 		try {
-			PreparedStatement ps = conn.prepareStatement("UPDATE member SET name = ? Where id = ?");
+			PreparedStatement ps = conn.prepareStatement(p.getProperty("changeName"));
 			ps.setString(1, newName);
 			ps.setString(2, id);
 			ps.executeUpdate();
