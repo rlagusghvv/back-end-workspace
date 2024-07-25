@@ -17,7 +17,7 @@ public class MemberDAO {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/kh", "root", "qwer1234");
 			PreparedStatement ps = conn.prepareStatement("INSERT INTO member VALUES(?,?,?)");
-			ps.setString(1, id);
+			ps.setString(1, id); 
 			ps.setString(2, password);
 			ps.setString(3, name);
 			ps.executeUpdate();
