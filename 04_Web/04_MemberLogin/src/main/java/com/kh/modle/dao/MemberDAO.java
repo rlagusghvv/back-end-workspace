@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.kh.modle.vo.Member;
 
@@ -50,4 +52,58 @@ public class MemberDAO {
 		ps.executeUpdate();
 		close(ps, conn);
 	}
+	
+	// 로그인
+	public Member login(String id, String pwd) throws SQLException {
+		Connection conn = connect();
+		PreparedStatement ps = conn.prepareStatement("SELECT * FROM member WHERE id = ? AND password = ?");
+		
+		ps.setString(1, id);
+		ps.setString(2, pwd);
+		ResultSet rs = ps.executeQuery();
+		Member member = null;
+		if(rs.next()) {
+			member = new Member(id, pwd, rs.getString("name"));
+		}
+		
+		close(ps,conn,rs);
+		
+		return member;
+		
+	}
+	
+	// 회원검색
+	public Member search(String id) throws SQLException {
+		Connection conn = connect();
+		
+		PreparedStatement ps = conn.prepareStatement("Select * FROM member Where id = ?");
+		
+		ps.setString(1, id);
+		
+		ResultSet rs = ps.executeQuery();
+		Member member = null;
+		
+		if(rs.next()) {
+			member = new Member(id, rs.getString("password"), rs.getString("name"));	
+		}
+		close(ps, conn, rs);
+		return member;
+	}
+	
+	// 전체회원보기
+		public List<Member> all() throws SQLException {
+			Connection conn = connect();
+			
+			PreparedStatement ps = conn.prepareStatement("Select * FROM member");
+			
+			ResultSet rs = ps.executeQuery();
+			List<Member> memberList = new ArrayList<>();
+			
+			while(rs.next()) {
+				memberList.add(new Member(rs.getString("id"), rs.getString("password"), rs.getString("name")));	
+			}
+			close(ps, conn, rs);
+			return memberList;
+		}
+	
 }

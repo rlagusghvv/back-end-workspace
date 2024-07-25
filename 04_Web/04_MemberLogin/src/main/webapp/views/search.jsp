@@ -7,11 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>로그인</h1>
-	<form action = "/login" method = "post">
-	ID : <input type="text" name = "id"> <br>
-	PassWord : <input type="password" name="pwd"><br>
-	<input type="submit" value="로그인">
-	</form>
+<h1>회원검색</h1>
+<form action = "/search">
+검색할 회원 아이디 : <input type="text" name="id"><br>
+<input type="submit" value="검색">
+</form>
+
 </body>
 </html>

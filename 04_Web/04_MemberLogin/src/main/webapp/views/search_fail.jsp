@@ -7,11 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>로그인</h1>
-	<form action = "/login" method = "post">
-	ID : <input type="text" name = "id"> <br>
-	PassWord : <input type="password" name="pwd"><br>
-	<input type="submit" value="로그인">
-	</form>
+<h1>회원 검색 실패했습니다.</h1>
+<a href="/">메인 페이지로 이동</a>
 </body>
 </html>

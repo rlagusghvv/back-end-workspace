@@ -11,26 +11,31 @@ import java.sql.SQLException;
 import com.kh.modle.dao.MemberDAO;
 import com.kh.modle.vo.Member;
 
-
-
-@WebServlet("/register")
-public class RegisterServlet extends HttpServlet {
+@WebServlet("/search")
+public class SearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		String id = request.getParameter("id");
-		String pwd = request.getParameter("pwd");
-		String name = request.getParameter("name");
 		
 		MemberDAO dao = new MemberDAO();
+		
+		
 		try {
-			dao.register(new Member(id, pwd, name));
+			Member member = dao.search(id);
+			
+			if(member!=null) {
+				// 바인딩 - request
+				request.setAttribute("member", member);
+				
+				request.getRequestDispatcher("/views/search_ok.jsp").forward(request, response);
+				
+			} else {
+				response.sendRedirect("/views/search_fail.jsp");
+				
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		response.sendRedirect("index.jsp");
 	}
 
 }

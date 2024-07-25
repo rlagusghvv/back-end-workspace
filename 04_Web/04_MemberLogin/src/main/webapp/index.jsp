@@ -1,3 +1,5 @@
+
+<%@page import="com.kh.modle.vo.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,6 +13,9 @@
 	
 	
 	<ul>
+	<% Member member = (Member)(session.getAttribute("member")); 
+		if(member == null) {
+	%>
 	
 	
 	<!-- 로그인 되어 있지 않은 경우 -->
@@ -26,7 +31,7 @@
 			LoginServlet : 세션 데이터 바인딩!
 			index.jsp로 이동
 	 -->
-	
+	<%} else { %>
 	<!-- 로그인 된 경우 -->
 	
 	<li><a href="views/search.jsp">회원검색</a></li>
@@ -40,7 +45,7 @@
 	<!--  전체회원보기 : views/allMember.jsp에 리스트 출력 -->
 	<li><a href="/logout">로그아웃</a></li>
 	<!-- 로그아웃 : 로그아웃하고 index.jsp로! -->
-	
+	<% } %>
 	</ul>
 	
 
