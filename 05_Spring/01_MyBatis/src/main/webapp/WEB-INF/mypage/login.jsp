@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="/login" method="post">
-아이디 : <input type="text" name ="id"><br></form>
-
+	<form action="/login" method="post">
+		아이디 : <input type="text" name="id"><br>
+		비밀번호 : <input type="password" name="password"><br>
+		<input type="submit" value="회원가입">
+	</form>
 </body>
 </html>

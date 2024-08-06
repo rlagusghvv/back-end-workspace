@@ -1,174 +1,165 @@
+!SESSION 2024-08-06 15:02:31.185 -----------------------------------------------
+eclipse.buildId=4.32.0.20240606-1231
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/kimhyeonho/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/kimhyeonho/.eclipse_keyring -data /Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi
 
-!ENTRY org.eclipse.core.resources 4 2 2024-07-31 14:35:46.374
-!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
-!STACK 1
-org.eclipse.core.runtime.CoreException: Problems while saving variables and containers
-	at org.eclipse.jdt.internal.core.JavaModelManager.saveVariablesAndContainers(JavaModelManager.java:4518)
-	at org.eclipse.jdt.internal.core.JavaModelManager.savingTimed(JavaModelManager.java:4783)
-	at org.eclipse.jdt.internal.core.JavaModelManager.saving(JavaModelManager.java:4769)
-	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
-	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
-	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Caused by: java.io.FileNotFoundException: /Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat (No such file or directory)
-	at java.base/java.io.FileOutputStream.open0(Native Method)
-	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
-	at org.eclipse.jdt.internal.core.JavaModelManager.saveVariablesAndContainers(JavaModelManager.java:4513)
-	... 10 more
-!SUBENTRY 1 org.eclipse.jdt.core 4 4 2024-07-31 14:35:46.376
-!MESSAGE Problems while saving variables and containers
-!STACK 0
-java.io.FileNotFoundException: /Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat (No such file or directory)
-	at java.base/java.io.FileOutputStream.open0(Native Method)
-	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
-	at org.eclipse.jdt.internal.core.JavaModelManager.saveVariablesAndContainers(JavaModelManager.java:4513)
-	at org.eclipse.jdt.internal.core.JavaModelManager.savingTimed(JavaModelManager.java:4783)
-	at org.eclipse.jdt.internal.core.JavaModelManager.saving(JavaModelManager.java:4769)
-	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
-	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
-	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-!SUBENTRY 1 org.eclipse.jdt.core 4 4 2024-07-31 14:35:46.376
-!MESSAGE Problems while saving variables and containers
-!STACK 0
-java.io.FileNotFoundException: /Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat (No such file or directory)
-	at java.base/java.io.FileOutputStream.open0(Native Method)
-	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
-	at org.eclipse.jdt.internal.core.JavaModelManager.saveVariablesAndContainers(JavaModelManager.java:4513)
-	at org.eclipse.jdt.internal.core.JavaModelManager.savingTimed(JavaModelManager.java:4783)
-	at org.eclipse.jdt.internal.core.JavaModelManager.saving(JavaModelManager.java:4769)
-	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
-	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
-	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!ENTRY ch.qos.logback.classic 1 0 2024-08-06 15:02:35.783
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
 
-!ENTRY org.eclipse.m2e.logback.appender 4 0 2024-07-31 14:35:46.383
-!MESSAGE Can't write workspace state
-!STACK 0
-java.io.FileNotFoundException: /Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi/.metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser (No such file or directory)
-	at java.base/java.io.FileOutputStream.open0(Native Method)
-	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryReader.createObjectOutputStream(ProjectRegistryReader.java:127)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryReader.writeWorkspaceState(ProjectRegistryReader.java:116)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.writeWorkspaceState(ProjectRegistryManager.java:1047)
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.saving(ProjectRegistryManager.java:1198)
-	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
-	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
-	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!ENTRY ch.qos.logback.classic 1 0 2024-08-06 15:02:38.121
+!MESSAGE Logback config file: /Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml
 
-!ENTRY org.eclipse.core.resources 4 2 2024-07-31 14:35:46.384
-!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
-!STACK 1
-org.eclipse.core.runtime.CoreException: Problems while saving variables and containers
-	at org.eclipse.wst.jsdt.internal.core.JavaModelManager.saveVariablesAndContainers(JavaModelManager.java:3316)
-	at org.eclipse.wst.jsdt.internal.core.JavaModelManager.saving(JavaModelManager.java:3559)
-	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
-	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
-	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-Caused by: java.io.FileNotFoundException: /Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi/.metadata/.plugins/org.eclipse.wst.jsdt.core/variablesAndContainers.dat (No such file or directory)
-	at java.base/java.io.FileOutputStream.open0(Native Method)
-	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
-	at org.eclipse.wst.jsdt.internal.core.JavaModelManager.saveVariablesAndContainers(JavaModelManager.java:3244)
-	... 9 more
-!SUBENTRY 1 org.eclipse.wst.jsdt.core 4 4 2024-07-31 14:35:46.384
-!MESSAGE Problems while saving variables and containers
-!STACK 0
-java.io.FileNotFoundException: /Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi/.metadata/.plugins/org.eclipse.wst.jsdt.core/variablesAndContainers.dat (No such file or directory)
-	at java.base/java.io.FileOutputStream.open0(Native Method)
-	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
-	at org.eclipse.wst.jsdt.internal.core.JavaModelManager.saveVariablesAndContainers(JavaModelManager.java:3244)
-	at org.eclipse.wst.jsdt.internal.core.JavaModelManager.saving(JavaModelManager.java:3559)
-	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
-	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
-	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
-!SUBENTRY 1 org.eclipse.wst.jsdt.core 4 4 2024-07-31 14:35:46.384
-!MESSAGE Problems while saving variables and containers
-!STACK 0
-java.io.FileNotFoundException: /Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi/.metadata/.plugins/org.eclipse.wst.jsdt.core/variablesAndContainers.dat (No such file or directory)
-	at java.base/java.io.FileOutputStream.open0(Native Method)
-	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:179)
-	at org.eclipse.wst.jsdt.internal.core.JavaModelManager.saveVariablesAndContainers(JavaModelManager.java:3244)
-	at org.eclipse.wst.jsdt.internal.core.JavaModelManager.saving(JavaModelManager.java:3559)
-	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
-	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
-	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!ENTRY org.eclipse.ui 2 0 2024-08-06 15:02:38.823
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-08-06 15:02:38.823
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
 
-!ENTRY org.eclipse.jdt.launching 4 4 2024-07-31 14:35:46.395
-!MESSAGE No such file or directory
-!STACK 0
-java.io.IOException: No such file or directory
-	at java.base/java.io.UnixFileSystem.createFileExclusively0(Native Method)
-	at java.base/java.io.UnixFileSystem.createFileExclusively(UnixFileSystem.java:258)
-	at java.base/java.io.File.createNewFile(File.java:1045)
-	at org.eclipse.jdt.internal.launching.LaunchingPlugin.writeInstallInfo(LaunchingPlugin.java:1109)
-	at org.eclipse.jdt.internal.launching.LaunchingPlugin$1.saving(LaunchingPlugin.java:576)
-	at org.eclipse.core.internal.resources.SaveManager.executeLifecycle(SaveManager.java:453)
-	at org.eclipse.core.internal.resources.SaveManager$1.run(SaveManager.java:269)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
-	at org.eclipse.core.internal.resources.SaveManager.broadcastLifecycle(SaveManager.java:272)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1226)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
-	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!ENTRY org.eclipse.ui 2 0 2024-08-06 15:02:39.761
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-08-06 15:02:39.761
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
 
-!ENTRY org.eclipse.core.resources 4 568 2024-07-31 14:35:46.401
-!MESSAGE Could not write workspace metadata '/Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi/.metadata/.plugins/org.eclipse.core.resources/0.snap'.
-!STACK 0
-java.io.FileNotFoundException: /Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi/.metadata/.plugins/org.eclipse.core.resources/0.snap (No such file or directory)
-	at java.base/java.io.FileOutputStream.open0(Native Method)
-	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:289)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:230)
-	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:150)
-	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:52)
-	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.<init>(SafeChunkyOutputStream.java:48)
-	at org.eclipse.core.internal.resources.SaveManager.snapTree(SaveManager.java:1517)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1260)
-	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1205)
-	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:51)
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:04:38.857
+!MESSAGE Classpath changed for project: 01_MyBatis
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:04:48.795
+!MESSAGE Classpath changed for project: 01_MyBatis
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:04:48.808
+!MESSAGE Classpath changed for project: mybatis
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:04:49.613
+!MESSAGE Classpath changed for project: vibe
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:04:52.342
+!MESSAGE Classpath changed for project: vibe
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:04:52.344
+!MESSAGE Boot project ADDED: vibe
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:04:52.346
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:04:52.391
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-08-06 15:04:52.411
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_21.0.3.v20240426-1530/jre/bin/java
+-cp
+/Applications/Eclipse.app/Contents/Eclipse/plugins/org.springframework.tooling.boot.ls_1.56.0.202407191456/servers/spring-boot-language-server/BOOT-INF/classes:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.springframework.tooling.boot.ls_1.56.0.202407191456/servers/spring-boot-language-server/BOOT-INF/lib/*
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-Dspring.config.location=file:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.springframework.tooling.boot.ls_1.56.0.202407191456/servers/spring-boot-language-server/BOOT-INF/classes/application.properties
+-XX:ErrorFile=/Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1722924292410
+org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+--languageserver.hover-timeout=225
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:04:52.412
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-08-06 15:04:52.421
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 94270
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:04:54.031
+!MESSAGE Classpath changed for project: vibe
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:05:00.080
+!MESSAGE Classpath changed for project: 01_MyBatis
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:05:00.195
+!MESSAGE Boot project ADDED: 01_MyBatis
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:05:00.202
+!MESSAGE Classpath changed for project: mybatis
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:05:00.204
+!MESSAGE Boot project ADDED: mybatis
+!SESSION 2024-08-06 15:06:05.541 -----------------------------------------------
+eclipse.buildId=4.32.0.20240606-1231
+java.version=21.0.3
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/kimhyeonho/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/kimhyeonho/.eclipse_keyring -data /Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi
+
+!ENTRY ch.qos.logback.classic 1 0 2024-08-06 15:06:11.246
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2024-08-06 15:06:13.916
+!MESSAGE Logback config file: /Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.6.1.20240411-1122.xml
+
+!ENTRY org.eclipse.ui 2 0 2024-08-06 15:06:14.625
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-08-06 15:06:14.625
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.eclipse.ui 2 0 2024-08-06 15:06:15.523
+!MESSAGE Warnings while parsing the commands from the 'org.eclipse.ui.commands' and 'org.eclipse.ui.actionDefinitions' extension points.
+!SUBENTRY 1 org.eclipse.ui 2 0 2024-08-06 15:06:15.523
+!MESSAGE Commands should really have a category: plug-in='org.springframework.tooling.boot.ls', id='spring.initializr.addStarters', categoryId='org.eclipse.lsp4e.commandCategory'
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:06:24.002
+!MESSAGE Boot project ADDED: 01_MyBatis
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:06:24.007
+!MESSAGE Starting Boot LS...
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:06:24.115
+!MESSAGE Started Boot LS process
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-08-06 15:06:24.165
+!MESSAGE Command list starting LS: org.springframework.tooling.boot.ls
+START:
+/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.x86_64_21.0.3.v20240426-1530/jre/bin/java
+-cp
+/Applications/Eclipse.app/Contents/Eclipse/plugins/org.springframework.tooling.boot.ls_1.56.0.202407191456/servers/spring-boot-language-server/BOOT-INF/classes:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.springframework.tooling.boot.ls_1.56.0.202407191456/servers/spring-boot-language-server/BOOT-INF/lib/*
+-Dsts.lsp.client=eclipse
+-Xmx1024m
+-XX:TieredStopAtLevel=1
+-Xlog:jni+resolve=off
+-Dspring.config.location=file:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.springframework.tooling.boot.ls_1.56.0.202407191456/servers/spring-boot-language-server/BOOT-INF/classes/application.properties
+-XX:ErrorFile=/Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/05_Spring/youtube-semi/.metadata/.plugins/org.springframework.tooling.boot.ls/fatal-error-spring-boot_1722924384163
+org.springframework.ide.vscode.boot.app.BootLanguageServerBootApp
+--languageserver.hover-timeout=225
+END
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:06:24.166
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-08-06 15:06:24.180
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 94299
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:06:24.185
+!MESSAGE Boot project ADDED: mybatis
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:06:24.185
+!MESSAGE Boot project ADDED: vibe
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:09:28.205
+!MESSAGE Classpath changed for project: youtube-semi-main
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:09:28.472
+!MESSAGE Classpath changed for project: youtube-semi-main
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:09:28.472
+!MESSAGE Boot project ADDED: youtube-semi-main
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:09:29.470
+!MESSAGE Classpath changed for project: youtube-semi-main
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:09:30.745
+!MESSAGE Classpath changed for project: youtube-semi-main
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:09:31.236
+!MESSAGE Classpath changed for project: youtube-semi-main
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2024-08-06 15:09:31.291
+!MESSAGE Classpath changed for project: youtube-semi-main
