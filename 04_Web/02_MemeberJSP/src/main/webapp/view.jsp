@@ -27,7 +27,7 @@
 		</tr>
 		<%-- getAttribute 리스트로 가지고 와 for문 활용!--%>
 		<%
-		ArrayList<Member> member = (ArrayList<Member>) (request.getAttribute("list"));
+		ArrayList<Member> member = (ArrayList<Member>)(request.getAttribute("list"));
 		for (Member m : member) {
 		%>
 		<tr>

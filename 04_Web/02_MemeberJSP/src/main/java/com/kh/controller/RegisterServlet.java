@@ -49,7 +49,7 @@ public class RegisterServlet extends HttpServlet {
 //		
 //		// 4. 네비게이션 : 결과 페이지 지정 - result.jsp
 //		// response.sendRedirect("result.jsp");
-//		// 만약 결과 페이지로 서버에서 받은 값 보여주려면 -> RequestDispatcher().forword 방식으로 보내야 함
+//		// 만약 결과 페이지로 서버에서 받은 값 보여주려면 -> getRequestDispatcher().forword 방식으로 보내야 함
 //		request.getRequestDispatcher("result.jsp").forward(request, response);}
 //		else {
 //			response.sendRedirect("fail.jsp");

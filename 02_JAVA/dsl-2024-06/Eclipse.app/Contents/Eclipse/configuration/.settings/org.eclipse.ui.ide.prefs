@@ -1,6 +1,6 @@
-MAX_RECENT_WORKSPACES=10
-RECENT_WORKSPACES=/Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/04_Web\n/Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/03_JDBC\n/Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace/02_JAVA
+MAX_RECENT_WORKSPACES=7
+RECENT_WORKSPACES=/Users/kimhyeonho/Desktop/developer/start_2024.05.28/back-end-workspace
 RECENT_WORKSPACES_PROTOCOL=3
-SHOW_RECENT_WORKSPACES=false
+SHOW_RECENT_WORKSPACES=true
 SHOW_WORKSPACE_SELECTION_DIALOG=false
 eclipse.preferences.version=1

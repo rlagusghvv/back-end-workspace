@@ -8,10 +8,10 @@ public class D_While {
 	public static void main(String[] args) {
 		D_While d = new D_While();
 //		d.method1();
-//		d.method2();
+		d.method2();
 //		d.method3();
 //		d.method4();
-		d.method5();
+//		d.method5();
 	}
 
 	/*
