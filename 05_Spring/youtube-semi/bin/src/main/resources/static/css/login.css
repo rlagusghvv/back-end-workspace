@@ -1,0 +1,22 @@
+.container {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+form {
+	max-width: 500px;
+	width: 100%;
+}
+button {
+	width: 100%;
+}
+a {
+	margin-top: 10px;
+	color: black;
+	text-decoration: none;
+}
+a:hover {
+	color: darkred;
+}
