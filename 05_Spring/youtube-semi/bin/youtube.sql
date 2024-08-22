@@ -8,7 +8,7 @@ DROP TABLE member;
 -- 회원
 CREATE TABLE member(
 	id VARCHAR(20) PRIMARY KEY,
-    password VARCHAR(20),
+    password VARCHAR(60),
     email VARCHAR(50),
     phone VARCHAR(13)
 );
@@ -64,9 +64,6 @@ CREATE TABLE video_like(
     FOREIGN KEY (id) REFERENCES member(id),
     FOREIGN KEY (video_code) REFERENCES video(video_code)
 );
-
-INSERT INTO member(id, password, email, phone)
-VALUES('akmu', '1234', 'akmu@gmail.com', '010-0000-0000');
 
 SELECT * FROM member;
 

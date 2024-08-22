@@ -14,33 +14,36 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-	
 
-	// 특정 http 요청에 대한 웹 기반 보안 구성. 인증/인가 및 로그아웃 설정
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		return http
 				.csrf(csrf -> csrf.disable())
-				.formLogin(login -> login.loginPage("/login") // 로그인 페이지 등록 
-						.defaultSuccessUrl("/", true) // 로그인 성공 시!
+				.formLogin(login ->
+					login
+						.loginPage("/login") // 로그인 페이지 등록
+						.defaultSuccessUrl("/", true) // 로그인 성공했을때
 						.permitAll()
-						)
+				)
 				.logout(logout ->
-				logout.logoutUrl("/logout") // 로그아웃 요청 URL
-				.logoutSuccessUrl("/")
-				.permitAll()
-				
-						)
+					logout
+						.logoutUrl("/logout") // 로그아웃 요청 URL
+						.logoutSuccessUrl("/") // 로그아웃 성공했을때
+						.permitAll()
+				)
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
-				.authorizeHttpRequests(authorize -> authorize.requestMatchers("/like", "/unlike").authenticated()
-						.anyRequest().permitAll())
+				.authorizeHttpRequests(authorize ->
+					authorize
+						.requestMatchers("/like", "/unlike").authenticated()
+						.anyRequest().permitAll()
+				)
 				.build();
 	}
 	
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
-		
 	}
-
+	
+	
 }

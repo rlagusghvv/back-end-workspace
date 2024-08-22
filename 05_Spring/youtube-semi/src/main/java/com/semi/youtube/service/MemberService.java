@@ -12,24 +12,21 @@ import com.semi.youtube.model.vo.Member;
 
 import mapper.MemberMapper;
 
-// Spring Security에서 제공하는 UserDetailsService 인터페이스 상속
-
 @Service
 public class MemberService implements UserDetailsService {
 
 	@Autowired
 	private MemberMapper member;
-
+	
 	@Autowired
 	private PasswordEncoder bcpe;
-
+	
 	public boolean check(String id) {
 		Member vo = member.check(id);
-		if (vo != null)
-			return true;
+		if(vo!=null) return true;
 		return false;
 	}
-
+	
 	public void signup(Member vo) {
 		vo.setPassword(bcpe.encode(vo.getPassword()));
 		member.signup(vo);
@@ -40,3 +37,8 @@ public class MemberService implements UserDetailsService {
 		return member.check(username);
 	}
 }
+
+
+
+
+

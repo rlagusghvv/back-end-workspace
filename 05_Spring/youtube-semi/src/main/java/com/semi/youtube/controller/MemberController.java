@@ -22,7 +22,6 @@ public class MemberController {
 	@ResponseBody
 	@PostMapping("/check")
 	public boolean check(String id) {
-		System.out.println(id);
 		return member.check(id);
 	}
 	

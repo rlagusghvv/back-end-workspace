@@ -13,10 +13,9 @@ import lombok.NoArgsConstructor;
 
 // Spring Security에서 제공하는 UserDetails 인터페이스 상속
 
-
 @Data @NoArgsConstructor 
 @AllArgsConstructor @Builder
-public class Member implements UserDetails{
+public class Member implements UserDetails {
 	private String id;
 	private String password;
 	private String email;
@@ -24,12 +23,11 @@ public class Member implements UserDetails{
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
 		return Collections.emptyList();
 	}
+	
 	@Override
 	public String getUsername() {
-		// TODO Auto-generated method stub
 		return id;
 	}
 }
