@@ -1,4 +1,4 @@
-package src.main.java.com.kh.upload;
+package com.kh.upload;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
