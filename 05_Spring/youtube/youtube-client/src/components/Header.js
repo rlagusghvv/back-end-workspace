@@ -87,7 +87,7 @@ const StyledHeader = styled.header`
   }
 `;
 
-const Header = () => {
+const Header = ({ onUpload }) => {
   const navigate = useNavigate();
   const [token, setToken] = useState(null);
   const [isOpen, setIsOpen] = useState(true);
@@ -143,7 +143,7 @@ const Header = () => {
           </button>
         </div>
       </StyledHeader>
-      <Modal isOpen={isOpen} onClose={close} />
+      <Modal isOpen={isOpen} onClose={close} onUpload={onUpload} />
     </>
   );
 };

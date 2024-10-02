@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { addVideo } from "../api/video";
 
-const Modal = ({ isOpen, onClose }) => {
+const Modal = ({ isOpen, onClose, onUpload }) => {
   const [video, setVideo] = useState({
     videoFile: null,
     imageFile: null,
@@ -18,7 +18,9 @@ const Modal = ({ isOpen, onClose }) => {
     formData.append("videoTitle", video.videoTitle);
     formData.append("videoDesc", video.videoDesc);
     formData.append("channelCode", video.channelCode);
-    await addVideo(formData);
+    const response = await addVideo(formData);
+    console.log(response.data); // 새 비디오 정보
+    onUpload(response.data);
     onClose();
   };
 

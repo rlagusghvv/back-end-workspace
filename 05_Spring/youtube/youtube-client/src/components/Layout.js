@@ -12,9 +12,14 @@ const Layout = () => {
   useEffect(() => {
     videoAPI();
   }, []);
+
+  // 비디오가 추가되는 경우
+  const onUpload = (newVideo) => {
+    setVideos([newVideo, ...videos]);
+  };
   return (
     <>
-      <Header />
+      <Header onUpload={onUpload} />
       <Outlet context={{ videos }} />
     </>
   );

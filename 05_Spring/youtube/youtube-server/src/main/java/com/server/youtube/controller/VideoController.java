@@ -84,16 +84,13 @@ public class VideoController {
         dto.getImageFile().transferTo(imgFile);
 
         // VO 객체로 서비스에 넘겨서 추가
-        service.create(Video.builder()
+        Video video = service.create(Video.builder()
                 .videoUrl("http://192.168.10.51:8082/video" + File.separator + videoName)
                 .videoImg("http://192.168.10.51:8082/thumbnail" + File.separator + imgName)
                 .videoTitle(dto.getVideoTitle())
                 .videoDesc(dto.getVideoDesc())
                 .videoDate(LocalDateTime.now())
-                .channel(Channel.builder()
-                        .channelCode(dto.getChannelCode()).build())
-
-                .build());
-        return ResponseEntity.status(HttpStatus.OK).build();
+                .channel(service.viewChannel(dto.getChannelCode())).build());
+        return ResponseEntity.ok(video);
     }
 }
